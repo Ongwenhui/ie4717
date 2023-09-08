@@ -52,13 +52,8 @@ nav a {	margin: 30px;
 }
 nav a:link { color: #8c7460; }
 nav a:visited { color: #9d8267}
-#Musicdiv {width: 600px;
-	margin: auto;
-	align: center;}
-#Musicdiv h2 { background-color:  #d0b28c }
-#musictable { margin: auto;}
-tr:nth-of-type(odd) { background-color: #d0b28c;
-	text-align: left;}
+#formtable tr {padding-top: 100;}
+label {display: block; text-align: right;}
 </style> 
 </head>
 <body>
@@ -76,34 +71,45 @@ tr:nth-of-type(odd) { background-color: #d0b28c;
   </div>
   <div id="rightcolumn">
     <div class="content">
-		<h1>Music at JavaJam</h1>
-		<p>The first Friday night at JavaJam is a special night. Join us from 8pm to 11pm for some music
-		you won't want to miss.</p>
-	<table id="musictable">
-		<tr>
-			<th>JANUARY</th>
-		</tr>
-		<tr>
-			<td>
-				<img src="melaniemorris.jpg" height=50 width="50" alt="melaniemorris" id="floatright">
-				<p>Melanie Morris entertains with her melodic folk style.<br>
-				<strong>CDs are available now!</strong></p>
-				<audio src="nggyu.mp3" controls><p>not supported</p></audio>
-			</td>
-		</tr>
-		<tr>
-			<th>FEBUARY</th>
-		</tr>
-		<tr>
-			<td>
-				<img src="tahoegreg.jpg" height=50 width="50" alt="melaniemorris" id="floatright">
-				<p>Tahoe Greg is back from his tour.
-				New songs. New stories.<br>
-				<strong>CDs are available now!</strong></p>
-				<audio src="nggyu.mp3" controls><p>not supported</p></audio>
-			</td>
-		</tr>
-	</table>
+        <h1>Jobs at Javajam</h1>
+        <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked with an asterisk *</p>
+        <form method="post" action="signup.php" id="signupform">
+            <table id="formtable">
+                <tr>
+                    <td>
+                        <label for="name">*Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Name" id="Name" value="Enter your Name here">
+                    </td>
+                </tr>
+                    <td>
+                        <label for="email">*Email:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="email" id="email" value="Enter your Email here">
+                    </td>
+                </tr>
+                </tr>
+                    <td>
+                        <label for="date">Start Date:</label>
+                    </td>
+                    <td>
+                        <input type="date" name="startdate" id="startdate">
+                    </td>
+                </tr>
+                </tr>
+                    <td>
+                        <label for="experience">*Experience:</label>
+                    </td>
+                    <td>
+                        <textarea name="experience" id="experience" rows="4" cols="40">Enter your experience here</textarea>
+                    </td>
+                </tr>
+            </table>
+        <input type="reset" value="Clear"><br><br>
+        <input type="submit" value="Apply Now">
+        </form>
   </div>
   </div>
   <footer>	<small><i>Copyright &copy; 2014 JavaJam Coffee House<br>
