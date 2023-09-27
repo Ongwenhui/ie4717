@@ -29,7 +29,6 @@ function chkName(event) {
 
 function chkEmail(event) {
     var email = event.currentTarget;
-    console.log(event.currentTarget.value);
     var pos = email.value.search(/^[A-Za-z.-]+@[A-Za-z.]+$/)
     if (pos != 0) {
       alert("The email you've entered is invalid!")
@@ -42,21 +41,28 @@ function chkEmail(event) {
     const emailarray = emailstring.split("@");
     let domains = String(emailarray[1]);
     console.log(domains);
-    // var emailstring = String(email);
-    // if (emailstring.includes("\@") === false) {
-    //     alert("You email must contain an @ sign!");
-    //     email.focus();
-    //     email.select();
-    //     return false;
-    // }
-    // else {
-    //     const emailarray = emailstring.split("\@");
-    //     var username = emailarray[0];
-    //     var domain = emailarray[1];
-    //     var usernamepos = username.value.search(/^[A-Za-z\.\-]+$/)
-    //     if (usernamepos != 0) {
-    //       alert("Your username should only contain alphabets, periods and hyphens")
-    //     }
-    // }
+    const domainarray = domains.split(".");
+    if ((domainarray.length < 2) || (domainarray.length > 4)) {
+      alert("The number of domains must be between two to four!")
+      email.focus();
+      email.select();
+    } else {
+      let lastdomainstring = String(domainarray[domainarray.length-1]);
+      console.log(lastdomainstring);
+      if ((lastdomainstring.length < 2) || (lastdomainstring.length > 3)) {
+        alert("The last domain must have two or three characters!");
+      }
+    }
+}
+
+function chkDate(event) {
+  var startdate = event.currentTarget.value;
+  const realstartdate = new Date(startdate); // Corrected variable name
+  const todaysdate = new Date();
+  console.log(typeof realstartdate); // Check the type of realstartdate
+  console.log(todaysdate);
+  if (realstartdate < todaysdate) {
+      alert("The start date cannot be before the current date!");
+  }
 }
     
